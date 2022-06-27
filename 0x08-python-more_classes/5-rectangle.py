@@ -6,8 +6,7 @@ class Rectangle:
     """Definition a class rectangle."""
 
     def __init__(self, width=0, height=0):
-        """Initializing Rectangle.
-        """
+        """Initializing Rectangle."""
         self.width = width
         self.height = height
 
@@ -60,4 +59,3 @@ class Rectangle:
     def __del__(self):
         """Print a message when the rectangle is deleted."""
         print("Bye rectangle...")
-
