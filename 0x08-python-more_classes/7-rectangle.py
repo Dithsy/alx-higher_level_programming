@@ -6,6 +6,7 @@ class Rectangle:
     """string representation of a rectangle"""
 
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.__width = width
@@ -32,7 +33,7 @@ class Rectangle:
     @height.setter
     def height(self, height):
         self.__height = height
-        if not type(int):
+        if not isinstance(height, int):
             raise TypeError('height must be an integer')
         if height < 0:
             raise ValueError('height must be >=0')
@@ -52,8 +53,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return total
         for i in range(self.__height):
-            total += ("#" * self.__width)
-            if i is not self.__height - 1:
+            total += (str(self.print_symbol) * self.__width)
+            if i != self.__height - 1:
                 total += "\n"
         return total
 
@@ -62,4 +63,3 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
